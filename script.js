@@ -20,8 +20,8 @@ function renderBots(doc) {
     li.setAttribute('data-id', doc.id)
 
 
-    name.textContent = doc.data().name
-    status.textContent = doc.data().status
+    name.textContent = doc.data().name.toUpperCase()
+    status.textContent = doc.data().status.toUpperCase()
     last_status.textContent = doc.data().last_state
 
     if(is_inactive_activeness(doc.data().last_state)) {

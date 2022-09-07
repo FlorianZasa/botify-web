@@ -1,6 +1,6 @@
 body {
   background-color: #000000;
-  padding: 10px;
+  padding: 5%;
 }
 
 h2{
@@ -13,17 +13,12 @@ h2{
 }
 
 
-table {
-  padding: 1em;
-}
-
 th {
   width: 30%;
 }
 
 td {
   font-size: large;
-  padding: 1em;
 }
    
    

@@ -6,7 +6,7 @@ db.collection('bots').get().then((snapshot) => {
 
 
         renderBots1(doc);
-        renderBots(doc);
+        // renderBots(doc);
         
     });
 })

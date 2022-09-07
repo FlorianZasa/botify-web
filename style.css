@@ -13,13 +13,20 @@ h2{
 }
 
 
+th, td {
+  text-align: left;
+  padding: 2%;
+}
+
 td {
   font-size: large;
 }
 
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%
 }
    
    

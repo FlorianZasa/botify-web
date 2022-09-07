@@ -3,10 +3,19 @@ ul{
   }
 
   li {
-    padding: 10px;
+    padding: 5px;
   }
 
   span {
     font-size: large;
     padding: 15px;
   }
+
+  .title {
+    color: red;
+    }
+   
+   body {
+   background-color: black;
+   padding: 10px;
+   }

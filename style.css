@@ -12,15 +12,12 @@ h2{
   font-weight: bold;
 }
 
-ul{
-  list-style-type: circle;
-}
 
-li {
+table {
   padding: 5px;
 }
 
-span {
+td {
   font-size: 20px;
   padding: 15px;
   width: 30%;

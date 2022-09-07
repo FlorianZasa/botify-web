@@ -14,7 +14,7 @@ h2{
 
 
 table {
-  padding: 5px;
+  padding: 1em;
 }
 
 th {
@@ -22,8 +22,8 @@ th {
 }
 
 td {
-  font-size: 20px;
-  padding: 15px;
+  font-size: large;
+  padding: 1em;
 }
    
    

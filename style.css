@@ -15,12 +15,12 @@ h2{
 
 th, td {
   text-align: left;
-  padding: 2%;
+  font-size: large;
+  padding: 1%;
 }
 
 td {
-  font-size: large;
-  padding: 2%
+  font-weight: bold;
 }
 
 

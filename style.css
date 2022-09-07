@@ -3,6 +3,10 @@ body {
   padding: 10px;
 }
 
+h2{
+  color: white;
+}
+
 .title {
   color: rgb(156, 156, 255);
   font-weight: bold;

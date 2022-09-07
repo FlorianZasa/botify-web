@@ -5,10 +5,47 @@ db.collection('bots').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
 
 
-
+        renderBots1(doc);
         renderBots(doc);
+        
     });
 })
+
+
+// Function zum anzeigen
+function renderBots1(doc) {
+    let tr = document.createElement('tr')
+    let name = document.createElement('td')
+    let status = document.createElement('td')
+    let last_status = document.createElement('td')
+
+    tr.setAttribute('data-id', doc.id)
+
+
+    name.textContent = doc.data().name.toUpperCase()
+    status.textContent = doc.data().status.toUpperCase()
+    last_status.textContent = doc.data().last_state
+
+    if(is_inactive_activeness(doc.data().last_state)) {
+        name.style.color = "red"
+        status.style.color = "red"
+        last_status.style.color = "red"
+    } else {
+        name.style.color = "green"
+        status.style.color = "green"
+        last_status.style.color = "green"
+    }
+
+    console.log(name, status, last_status)
+
+    tr.appendChild(name)
+    tr.appendChild(status)
+    tr.appendChild(last_status)
+
+    botlist.append(tr)
+
+};
+
 
 // Function zum anzeigen
 function renderBots(doc) {

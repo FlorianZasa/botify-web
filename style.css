@@ -17,10 +17,13 @@ table {
   padding: 5px;
 }
 
+th {
+  width: 30%;
+}
+
 td {
   font-size: 20px;
   padding: 15px;
-  width: 30%;
 }
    
    

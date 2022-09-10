@@ -9,14 +9,14 @@ db.collection('bots').get().then((snapshot) => {
     });
 })
 
-reload();
+// reload();
 
 
-function reload() {
-    setTimeout(function(){
-        window.location.reload();
-     }, 3000);
-}
+// function reload() {
+//     setTimeout(function(){
+//         window.location.reload();
+//      }, 3000);
+// }
 
 
 // Function zum anzeigen

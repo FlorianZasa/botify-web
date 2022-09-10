@@ -4,11 +4,19 @@ const botlist = document.getElementById('botlist')
 db.collection('bots').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
 
-
         renderBots(doc);
         
     });
 })
+
+reload();
+
+
+function reload() {
+    setTimeout(function(){
+        window.location.reload(1);
+     }, 100);
+}
 
 
 // Function zum anzeigen

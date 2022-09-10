@@ -15,7 +15,7 @@ reload();
 function reload() {
     setTimeout(function(){
         window.location.reload(1);
-     }, 100);
+     }, 1000);
 }
 
 

@@ -34,13 +34,13 @@ function renderBots(doc) {
     last_status.textContent = doc.data().last_state
 
     if(is_inactive_activeness(doc.data().last_state)) {
-        name.style.color = "red"
-        status.style.color = "red"
-        last_status.style.color = "red"
+        name.style.color = "#ff0d00"
+        status.style.color = "#ff0d00"
+        last_status.style.color = "#ff0d00"
     } else {
-        name.style.color = "green"
-        status.style.color = "green"
-        last_status.style.color = "green"
+        name.style.color = "#0afa2e"
+        status.style.color = "#0afa2e"
+        last_status.style.color = "#0afa2e"
     }
 
     console.log(name, status, last_status)

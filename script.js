@@ -22,14 +22,12 @@ db.collection('bots').get().then((snapshot) => {
 // Function zum anzeigen
 function renderBots(doc) {
     let tr = document.createElement('tr')
-    let a = document.createElement('a')
     let name = document.createElement('td')
     let status = document.createElement('td')
     let vor = document.createElement('td')
     let last_status = document.createElement('td')
 
     tr.setAttribute('data-id', doc.id)
-    a.setAttribute('btn-id', doc.id)
 
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()
@@ -54,14 +52,8 @@ function renderBots(doc) {
     tr.appendChild(vor)
     tr.appendChild(last_status)
 
-    a.append(tr)
 
-    // tr.appendChild(name)
-    // tr.appendChild(status)
-    // tr.appendChild(vor)
-    // tr.appendChild(last_status)
-
-    botlist.append(a)
+    botlist.append(tr)
 
 };
 

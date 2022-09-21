@@ -32,7 +32,7 @@ function renderBots(doc) {
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()
     status.textContent = doc.data().status.toUpperCase()
-    vor.textContent = "vor " + getVorTime(doc.data().last_state) + " sek".toUpperCase()
+    vor.textContent = "vor ".toUpperCase() + getVorTime(doc.data().last_state) + " sek".toUpperCase()
     last_status.textContent = doc.data().last_state
 
     if(is_inactive_activeness(doc.data().last_state)) {

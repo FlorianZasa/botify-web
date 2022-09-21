@@ -95,7 +95,7 @@ function is_inactive_activeness(time) {
     var dif = ls_dt.getTime() - today.getTime();
     var seconds_dif = dif / 1000;
     var seconds = Math.abs(seconds_dif);
-    if (seconds > 60) {
+    if (seconds > 90) {
         return true
     } else {
         return false

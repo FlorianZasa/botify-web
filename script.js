@@ -49,19 +49,19 @@ function renderBots(doc) {
         last_status.style.color = "#0afa2e"
     }
 
-    a.appendChild(name)
-    a.appendChild(status)
-    a.appendChild(vor)
-    a.appendChild(last_status)
+    tr.appendChild(name)
+    tr.appendChild(status)
+    tr.appendChild(vor)
+    tr.appendChild(last_status)
 
-    tr.append(a)
+    a.append(tr)
 
     // tr.appendChild(name)
     // tr.appendChild(status)
     // tr.appendChild(vor)
     // tr.appendChild(last_status)
 
-    botlist.append(tr)
+    botlist.append(a)
 
 };
 

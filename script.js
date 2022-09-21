@@ -32,19 +32,19 @@ function renderBots(doc) {
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()
     status.textContent = doc.data().status.toUpperCase()
-    vor.textContent = "vor " +getVorTime(last_status) + "sek".toUpperCase()
+    vor.textContent = "vor " + getVorTime(doc.data().last_state) + "sek".toUpperCase()
     last_status.textContent = doc.data().last_state
 
     if(is_inactive_activeness(doc.data().last_state)) {
         name.style.color = "#ff0d00"
         status.style.color = "#ff0d00"
-        last_status.style.color = "#ff0d00"
         vor.style.color = "#ff0d00"
+        last_status.style.color = "#ff0d00"
     } else {
         name.style.color = "#0afa2e"
         status.style.color = "#0afa2e"
-        last_status.style.color = "#0afa2e"
         vor.style.color = "#0afa2e"
+        last_status.style.color = "#0afa2e"
     }
 
     tr.appendChild(name)

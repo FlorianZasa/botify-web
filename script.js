@@ -27,6 +27,9 @@ function counter(startTime, el) {
     startTime += 1;
     // return ("VOR " + startTime + " SEK")
     el.textContent = "VOR " + startTime + " SEK"
+    if startTime > 90 {
+        get_all_data()
+    }
 
 }
 

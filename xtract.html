@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="300">
+    <title>Botify Web - Xtract</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="message">
+      <h2 id="botname"></h2>
+      <table style="border-collapse: collapse; width: 100%;" border="2">
+        <tbody>
+            <tr>
+                <td>Letzter Status:</td>
+                <td id="last_state"></td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td id="state"></td>
+            </tr>
+            <tr>
+                <td>Log:</td>
+                <td id="log"></td>
+            </tr>
+            <tr>
+                <td>Aktiv seit:</td>
+                <td id="time_active"></td>
+            </tr>
+        </tbody>
+        <style>
+            table {
+                color: white
+            }
+        </style>
+
+      </table>
+    </div>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyANxIKzjNVJ-sZKYZ6VxLpMifuZ4tpA6Xw",
+            authDomain: "robat-1c1a8.firebaseapp.com",
+            databaseURL: "https://robat-1c1a8.firebaseio.com",
+            projectId: "robat-1c1a8",
+            storageBucket: "robat-1c1a8.appspot.com",
+            messagingSenderId: "343068274490",
+            appId: "1:343068274490:web:3756bfea112481a587ea03",
+            measurementId: "G-R065CS48NG"
+        };
+        
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+    </script>
+    <script src="script_xtract.js"></script>
+
+    
+  </body>
+</html>

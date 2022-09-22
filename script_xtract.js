@@ -46,7 +46,6 @@ function renderBots(doc) {
     time_active.textContent = doc.data().started
     more.textContent = doc.data().more
     for (var obj in doc.data().errors) {
-        console.log(doc.data().errors[obj])
         for (var data in doc.data().errors[obj]) {
             error_str += data + ': ' + doc.data().errors[obj][data]+';\n ';
         }

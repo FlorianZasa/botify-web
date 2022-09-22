@@ -1,22 +1,25 @@
 
 const botlist = document.getElementById('botlist')
 
-db.collection('bots').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
 
-        renderBots(doc);
-        
-    });
-})
-
-// reload();
+get_all_data()
 
 
-// function reload() {
-//     setTimeout(function(){
-//         window.location.reload();
-//      }, 3000);
-// }
+function clear_list() {
+    botlist.innerHTML = "";
+}
+
+function get_all_data() {
+    clear_list()
+    db.collection('bots')
+    .onSnapshot((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            renderBots(doc)
+            
+        });
+    })
+}
+
 
 
 // Function zum anzeigen

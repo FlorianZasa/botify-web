@@ -5,13 +5,18 @@ const botlist = document.getElementById('botlist')
 get_all_data()
 
 
-function clear_list() {
-    $("data").remove();
+function clear_list(row) {
+    row.remove();
 }
 
 function get_all_data() {
     db.collection('bots')
     .onSnapshot((snapshot) => {
+        try {
+            clear_list(document.getElementById("data"))
+        } catch (error){
+            console.log("No list yet, " + error);
+        }
         snapshot.docs.forEach(doc => {
             renderBots(doc)
         });
@@ -29,7 +34,7 @@ function counter(startTime, el) {
 
 // Function zum anzeigen
 function renderBots(doc) {
-    clear_list()
+    
     let tr = document.createElement('tr')
     let name = document.createElement('td')
     let status = document.createElement('td')
@@ -37,13 +42,12 @@ function renderBots(doc) {
     let last_status = document.createElement('td')
 
     tr.setAttribute('data-id', doc.id)
-    tr.setAttribute('class', 'data')
+    tr.setAttribute('id', 'data')
     vor.setAttribute('id', 'time-counter')
 
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()
     status.textContent = doc.data().status.toUpperCase()
-    // vor.textContent = "vor ".toUpperCase() + getVorTime(doc.data().last_state) + " sek".toUpperCase()
     counter(getVorTime(doc.data().last_state), vor)
     last_status.textContent = doc.data().last_state
 
@@ -67,7 +71,7 @@ function renderBots(doc) {
 
     botlist.append(tr)
 
-    var cancel = setInterval(function() {counter(getVorTime(doc.data().last_state), vor)}, 2000)
+    setInterval(function() {counter(getVorTime(doc.data().last_state), vor)}, 2000)
 
 };
 

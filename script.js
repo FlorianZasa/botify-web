@@ -43,7 +43,8 @@ function renderBots(doc) {
 
     tr.setAttribute('data-id', doc.id)
     tr.setAttribute('id', 'data')
-    tr.setAttribute('onClick', "window.location='" + doc.id + ".html'")
+    // tr.setAttribute('onClick', "window.location='" + doc.id + ".html'")
+    tr.setAttribute('onClick', "window.location='error.html'")
     vor.setAttribute('id', 'time-counter')
 
 

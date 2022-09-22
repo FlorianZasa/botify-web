@@ -13,16 +13,23 @@ function get_all_data() {
     db.collection('bots')
     .onSnapshot((snapshot) => {
         snapshot.docs.forEach(doc => {
-            clear_list()
             renderBots(doc)
         });
     })
+}
+
+function counter(startTime, el) {
+    startTime += 1;
+    // return ("VOR " + startTime + " SEK")
+    el.textContent = "VOR " + startTime + " SEK"
+
 }
 
 
 
 // Function zum anzeigen
 function renderBots(doc) {
+    clear_list()
     let tr = document.createElement('tr')
     let name = document.createElement('td')
     let status = document.createElement('td')
@@ -31,11 +38,13 @@ function renderBots(doc) {
 
     tr.setAttribute('data-id', doc.id)
     tr.setAttribute('class', 'data')
+    vor.setAttribute('id', 'time-counter')
 
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()
     status.textContent = doc.data().status.toUpperCase()
-    vor.textContent = "vor ".toUpperCase() + getVorTime(doc.data().last_state) + " sek".toUpperCase()
+    // vor.textContent = "vor ".toUpperCase() + getVorTime(doc.data().last_state) + " sek".toUpperCase()
+    counter(getVorTime(doc.data().last_state), vor)
     last_status.textContent = doc.data().last_state
 
     if(is_inactive_activeness(doc.data().last_state)) {
@@ -57,6 +66,8 @@ function renderBots(doc) {
 
 
     botlist.append(tr)
+
+    var cancel = setInterval(function() {counter(getVorTime(doc.data().last_state), vor)}, 2000)
 
 };
 

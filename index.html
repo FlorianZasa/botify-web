@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- meta http-equiv="refresh" content="5"> -->
+    <meta http-equiv="refresh" content="60">
     <title>Botify Web</title>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
     <script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
 
     <link rel="stylesheet" href="style.css">
@@ -38,9 +39,6 @@
             measurementId: "G-R065CS48NG"
         };
         
-        // Initialize Firebase
-        // firebase.initializeApp(firebaseConfig);
-        // const db = firebase.firestore();
 
         const app = firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();

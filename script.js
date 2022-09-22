@@ -6,16 +6,15 @@ get_all_data()
 
 
 function clear_list() {
-    botlist.innerHTML = "";
+    $("data").remove();
 }
 
 function get_all_data() {
-    clear_list()
     db.collection('bots')
     .onSnapshot((snapshot) => {
         snapshot.docs.forEach(doc => {
+            clear_list()
             renderBots(doc)
-            
         });
     })
 }
@@ -31,6 +30,7 @@ function renderBots(doc) {
     let last_status = document.createElement('td')
 
     tr.setAttribute('data-id', doc.id)
+    tr.setAttribute('class', 'data')
 
 
     name.textContent = doc.data().id.toUpperCase()+" / "+doc.data().name.toUpperCase()

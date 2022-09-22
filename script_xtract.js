@@ -17,13 +17,17 @@ function get_all_data() {
 
 // Function zum anzeigen
 function renderBots(doc) {
+    var error_str = ""
 
 
     bot_name = document.getElementById("botname")
+    restarts = document.getElementById("restarts")
     last_state = document.getElementById("last_state")
     state = document.getElementById("state")
     log = document.getElementById("log")
     time_active = document.getElementById("time_active")
+    all_errors = document.getElementById("errors")
+    more = document.getElementById("more")
 
     if (is_inactive_activeness(doc.data().last_state)) {
         bot_name.style.color = "#ff0d00"
@@ -33,12 +37,21 @@ function renderBots(doc) {
         bot_name.style.color = "#0afa2e"
         last_state.style.color = "#0afa2e"
     }
-
-    bot_name.textContent = doc.data().name
+    console.log(doc.data())
+    bot_name.textContent = doc.data().id + " / " + doc.data().name
+    restarts.textContent = doc.data().automated_restarts
     last_state.textContent = doc.data().last_state
     state.textContent = doc.data().status
     log.textContent = doc.data().log
     time_active.textContent = doc.data().started
+    more.textContent = doc.data().more
+    for (var obj in doc.data().errors) {
+        console.log(doc.data().errors[obj])
+        for (var data in doc.data().errors[obj]) {
+            error_str += data + ': ' + doc.data().errors[obj][data]+';\n ';
+        }
+    }
+    all_errors.textContent = error_str
     
 }
 
